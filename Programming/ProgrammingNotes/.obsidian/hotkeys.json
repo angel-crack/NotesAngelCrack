@@ -1,0 +1,29 @@
+{
+  "templater-obsidian:template-powershell.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "."
+    }
+  ],
+  "templater-obsidian:templates/template-powershell.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "."
+    }
+  ],
+  "templater-obsidian:Angular/templates/template-powershell.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "."
+    }
+  ]
+}

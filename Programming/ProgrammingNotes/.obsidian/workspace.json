@@ -1,0 +1,413 @@
+{
+  "main": {
+    "id": "7cd5ae4ef9be4356",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a4d52743cb1f4b0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20e95c61ab866049",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/01. Generar un Proyecto.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3753066223e7df85",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/01. Generar un Proyecto.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "27e48110d50feda8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/02. Añadiendo Recursos.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9e190c924c0a1537",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/03. DataSet.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d11355734afb2ed9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/04. Scaffold.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "abf41f0d61a1a486",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/05 Componente Padre Padre.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6cb48845c56310ee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/06. Crear Modulos.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "333a55efd9498bf6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/07. Lazy Loading.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f24ce96fa0a218bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/08. Path.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6fcd434c7b8f9577",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/09. Shared Components.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ce0d8a28b99a44ae",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Angular/images/router-outlet-modules.png"
+              }
+            }
+          },
+          {
+            "id": "d69d8cd2ce5262ee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/11. ng-container.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "54a8104421291223",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/12. Comunicacion, Servicios.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2fd14a8c62588348",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/13.  @Input.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "86b5501d359d1f4c",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Angular/images/models.png"
+              }
+            }
+          },
+          {
+            "id": "122d54d0e0b0f47c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/15. ngTemplate; Context{}.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "117b92ac97542fd5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/16. Routing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c6365d51a24ac990",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/17. Pipes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "17dd7d54d784ebad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Angular/18. Directives.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a203b975810dce8d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "19. 404 Not Found.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 19
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9000616e7be1b6f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "c164f7bd52b8ec85",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cdbb3962e6e3a76a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ce4448b6528fcd22",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bc6b341615f637ec",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300.5
+  },
+  "right": {
+    "id": "73beedcc3aa2b4f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a678bbe0de9498d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4129c13e3a7e930",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "19. 404 Not Found.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ab73673569cbdd4f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "19. 404 Not Found.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cd85152af11ba944",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "bcf388e18a4e2da6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "19. 404 Not Found.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "a203b975810dce8d",
+  "lastOpenFiles": [
+    "Angular/18. Directives.md",
+    "19. 404 Not Found.md",
+    "Angular/17. Pipes.md",
+    "Angular/16. Routing.md",
+    "Angular/15. ngTemplate; Context{}.md",
+    "Angular/images/html-ng-template.png",
+    "Angular/images/html-tracks.png",
+    "Angular/images/html-track.png",
+    "Angular/images/models.png",
+    "Angular/14. Models.md",
+    "Angular/13.  @Input.md",
+    "Angular/12. Comunicacion, Servicios.md",
+    "Angular/11. ng-container.md",
+    "Angular/10. Router Outlet.md",
+    "Angular/images/router-outlet-modules.png",
+    "Angular/images/router-auth-mopdule.png",
+    "Angular/images/router-outlet-padre.png",
+    "Angular/09. Shared Components.md",
+    "Angular/images/getsharedcomponent.png",
+    "Angular/images/sharingcomponet.png",
+    "Angular/images/compilerror.png",
+    "Angular/08. Path.md",
+    "Angular/07. Lazy Loading.md",
+    "Angular/06. Crear Modulos.md",
+    "Angular/01. Generar un Proyecto.md",
+    "Angular/05 Componente Padre Padre.md",
+    "Angular/04. Scaffold.md",
+    "Angular/03. DataSet.md",
+    "Angular/templates/template-powershell.md",
+    "Angular/02. Añadiendo Recursos.md",
+    "Angular/templates",
+    "Angular/images",
+    "Angular",
+    "Welcome.md"
+  ]
+}
