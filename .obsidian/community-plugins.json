@@ -1,5 +1,6 @@
 [
   "obsidian-excalidraw-plugin",
-  "table-editor-obsidian",
-  "symbols-prettifier"
+  "symbols-prettifier",
+  "codeblock-customizer",
+  "templater-obsidian"
 ]

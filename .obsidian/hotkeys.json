@@ -1,0 +1,20 @@
+{
+  "templater-obsidian:Programming/Angular/templates/template-powershell.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "Key226"
+    }
+  ],
+  "templater-obsidian:Templates/template-powershell.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "Key226"
+    }
+  ]
+}
