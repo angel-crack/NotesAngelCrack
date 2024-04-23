@@ -8,53 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a4cd621a4ba6f717",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programming/Express JS/02. Variables de entorno.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "235d29cd2bdcf459",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programming/Express JS/03. Params.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "40341aabfc1a5048",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Plan.md"
-              }
-            }
-          },
-          {
             "id": "c227f33916318a4b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/Express JS/04. API - Basics.md",
+                "file": "Programming/Express JS/07. API - Update.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -120,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/Express JS/04. API - Basics.md",
+                "file": "Programming/Express JS/07. API - Update.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/Express JS/04. API - Basics.md",
+                "file": "Programming/Express JS/07. API - Update.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -160,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/Express JS/04. API - Basics.md"
+                "file": "Programming/Express JS/07. API - Update.md"
               }
             }
           },
@@ -191,13 +156,16 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "89df22a9bf0bc847",
+  "active": "c227f33916318a4b",
   "lastOpenFiles": [
-    "Programming/Express JS/03. Params.md",
+    "Programming/Express JS/06. API - Create.md",
+    "Programming/Express JS/07. API - Update.md",
+    "Programming/Express JS/05. API - Read.md",
     "Programming/Express JS/04. API - Basics.md",
+    "Programming/Express JS/02. Variables de entorno.md",
+    "Programming/Express JS/03. Params.md",
     "Programming/Express JS/00. Instalacion.md",
     "Programming/Express JS/01. Peticion simple.md",
-    "Programming/Express JS/02. Variables de entorno.md",
     "Programming/Mongoose/02. Model.md",
     "Programming/MongoDB/Images/promisesave.png",
     "Programming/MongoDB/Images/collectionsdb.png",
@@ -229,9 +197,6 @@
     "Programming/ProgrammingNotes/GIT/11. Stash - Rebase.md",
     "Programming/ProgrammingNotes/GIT/10. Merge.md",
     "Programming/ProgrammingNotes/GIT/09. Branches.md",
-    "Programming/ProgrammingNotes/GIT/08. Mover y Eliminar Archivos.md",
-    "Programming/ProgrammingNotes/GIT/07. Corregir Commit.md",
-    "CUCM/Exams/Exams.md",
     "Excalidraw",
     "CUCM/Exams/Images",
     "CUCM/CTI",
