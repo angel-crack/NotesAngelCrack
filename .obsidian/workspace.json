@@ -18,8 +18,43 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "235d29cd2bdcf459",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Programming/Express JS/03. Params.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "40341aabfc1a5048",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/Plan.md"
+              }
+            }
+          },
+          {
+            "id": "c227f33916318a4b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Programming/Express JS/04. API - Basics.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -85,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/Express JS/02. Variables de entorno.md",
+                "file": "Programming/Express JS/04. API - Basics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/Express JS/02. Variables de entorno.md",
+                "file": "Programming/Express JS/04. API - Basics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/Express JS/02. Variables de entorno.md"
+                "file": "Programming/Express JS/04. API - Basics.md"
               }
             }
           },
@@ -156,12 +191,29 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "a4cd621a4ba6f717",
+  "active": "89df22a9bf0bc847",
   "lastOpenFiles": [
-    "Programming/Express JS/Images/dot-env-proof.png",
-    "Programming/Express JS/02. Variables de entorno.md",
-    "Programming/Express JS/01. Peticion simple.md",
+    "Programming/Express JS/03. Params.md",
+    "Programming/Express JS/04. API - Basics.md",
     "Programming/Express JS/00. Instalacion.md",
+    "Programming/Express JS/01. Peticion simple.md",
+    "Programming/Express JS/02. Variables de entorno.md",
+    "Programming/Mongoose/02. Model.md",
+    "Programming/MongoDB/Images/promisesave.png",
+    "Programming/MongoDB/Images/collectionsdb.png",
+    "Programming/Mongoose/01. Schema.md",
+    "Programming/Mongoose/00. Basics.md",
+    "Programming/MongoDB/02. Crear collection.md",
+    "Programming/MongoDB/01. Start DB Service.md",
+    "Programming/MongoDB/mongodb.md",
+    "Excalidraw/Plan.md",
+    "Programming/MongoDB/Images/robo3t.png",
+    "Programming/MongoDB/00. Instalar - Iniciar.md",
+    "Pasted image 20240421203150.png",
+    "Programming/MongoDB/Images/folderdb.png",
+    "Programming/MongoDB/Images",
+    "Programming/Mongoose",
+    "Programming/Express JS/Images/dot-env-proof.png",
     "Programming/Express JS/Images/another-route-get.png",
     "Programming/Express JS/Images/route-get.png",
     "Programming/Express JS/Images/req-express.png",
@@ -174,35 +226,19 @@
     "Programming/GIT/07. Corregir Commit.md",
     "Programming/Angular/01. Generar un Proyecto.md",
     "Excalidraw/Drawing 2024-04-17 10.16.10.excalidraw.md",
-    "Excalidraw/Plan.md",
     "Programming/ProgrammingNotes/GIT/11. Stash - Rebase.md",
     "Programming/ProgrammingNotes/GIT/10. Merge.md",
     "Programming/ProgrammingNotes/GIT/09. Branches.md",
     "Programming/ProgrammingNotes/GIT/08. Mover y Eliminar Archivos.md",
     "Programming/ProgrammingNotes/GIT/07. Corregir Commit.md",
     "CUCM/Exams/Exams.md",
-    "CUCM/LAB/Lab.md",
-    "CUCM/LAB/LABPcap.png",
-    "CUCM/CUCM.md",
-    "CUCM/LAB/Phone.md",
-    "Pasted image 20240404224056.png.md",
-    "Excalidraw/git.md",
     "Excalidraw",
-    "Pasted image 20240404222932.png",
-    "Pasted image 20240404230315.png",
-    "Pasted image 20240404225940.png",
-    "Pasted image 20240404225931.png",
-    "Untitled",
-    "CUCM/Media Resources/MOH.md",
-    "CUCM/Media Resources/Media Resources.md",
-    "CUCM/Media Resources/CFB.md",
     "CUCM/Exams/Images",
     "CUCM/CTI",
     "CUCM/Exams",
     "CUCM/Trunk/Images",
     "CUCM/Media Resources/MTP/DTMF",
     "CUCM/Media Resources/MTP",
-    "CUCM/Trunk",
     "Untitled.canvas"
   ]
 }
