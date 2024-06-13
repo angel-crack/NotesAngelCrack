@@ -11,6 +11,7 @@ project-a/
 	┣ favicon.ico
 	┣ index.html
 ```
+
 ```html info:15
 			<!doctype html>
 			<html lang="en">
@@ -42,6 +43,7 @@ app/
 ┣ app-routing.module.ts
 ┣ app.component.css ⇒ Los estilos que aplican solo al archivo de abajo
 ```
+
 ```css
 	h1 {
 	    background-color: red;
