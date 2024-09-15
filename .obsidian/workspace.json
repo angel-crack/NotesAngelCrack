@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "2232639ec76ece11",
+        "id": "066e9e64af91edd9",
         "type": "tabs",
         "children": [
           {
-            "id": "e71d06ef91569589",
+            "id": "36b2748d1d6dd45d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/Angular/10. Router Outlet.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "009454b2aa246e44",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programming/Angular/16. Routing.md",
+                "file": "CUCM/Geolocation/Geolocation.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path:Programming/Angular router item",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,12 +65,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 414.5
+    "width": 414.5,
+    "collapsed": true
   },
   "right": {
     "id": "30242a3a785e4fd5",
@@ -99,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/Angular/16. Routing.md",
+                "file": "CUCM/Geolocation/Geolocation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/Angular/16. Routing.md",
+                "file": "CUCM/Geolocation/Geolocation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/Angular/16. Routing.md"
+                "file": "CUCM/Geolocation/Geolocation.md"
               }
             }
           },
@@ -170,54 +157,54 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "009454b2aa246e44",
+  "active": "36b2748d1d6dd45d",
   "lastOpenFiles": [
-    "Programming/Angular/10. Router Outlet.md",
-    "Programming/Angular/16. Routing.md",
-    "Programming/Angular/14. Models.md",
-    "Programming/Angular/09. Shared Components.md",
-    "Programming/Angular/07. Lazy Loading.md",
-    "Programming/Angular/06. Crear Modulos.md",
-    "Programming/Angular/05 Componente Padre Padre.md",
-    "Programming/Angular/Common Steps/02. Layout Common.md",
-    "Programming/Angular/Common Steps/01. Generate Enviroments.md",
-    "Programming/Angular/Common Steps/00. Generate Project.md",
-    "Programming/Angular/Angular.md",
-    "Programming/Angular/Common Steps",
-    "Programming/Angular/23. API.md",
-    "Programming/Angular/18. Directives.md",
-    "Programming/Angular/15. ngTemplate; Context{}.md",
-    "Programming/Angular/12. Comunicacion, Servicios.md",
-    "Programming/Angular/00. Notes.md",
-    "Programming/Angular/31. Architecture.md",
-    "Programming/Angular/04. Scaffold.md",
-    "Programming/Angular/03. DataSet.md",
-    "Programming/Angular/02. Añadiendo Recursos.md",
-    "Programming/Angular/01. Generar un Proyecto.md",
-    "Programming/Docker/00. Fundamentos.md",
-    "Programming/WebProjects/CallManager Monitor/Estructura.md",
-    "Programming/WebProjects/CallManager Monitor/00..md",
-    "Programming/WebProjects/Untitled.md",
-    "Programming/WebProjects/CallManager Monitor",
+    "Pasted image 20240912175420.png",
+    "Pasted image 20240912175358.png",
+    "Pasted image 20240912175132.png",
+    "Pasted image 20240912175118.png",
+    "Pasted image 20240912172655.png",
+    "Pasted image 20240912172600.png",
+    "Pasted image 20240912172337.png",
+    "Pasted image 20240912172312.png",
+    "Pasted image 20240912172309.png",
+    "Pasted image 20240912164245.png",
+    "Pasted image 20240912164144.png",
+    "CUCM/CUCM.md",
+    "CUCM/Geolocation/Images",
+    "CUCM/Geolocation/Geolocation.md",
+    "CUCM/Geolocation",
+    "Untitled.md",
     "Programming/Docker/05. Network.md",
+    "Programming/Docker/06. docker-compose.md",
+    "CUCM/Media Resources/MOH.md",
+    "CUCM/Exams/Exams.md",
+    "CUCM/Media Resources/MTP/DTMF/DTMF.md",
+    "CUCM/Media Resources/MTP/DTMF/out-band.md",
+    "CUCM/Media Resources/MTP/DTMF/in-band.md",
+    "Programming/Angular/29. ViewChild().md",
+    "Programming/WebProjects/CallManager Monitor/Estructura.md",
+    "CUCM/Media Resources/MTP/MTP.md",
+    "Programming/GIT/03. Add to Stage.md",
+    "Programming/GIT/02. Inicializar el Repositorio.md",
+    "Programming/GIT/01. Configuracion Global.md",
+    "Programming/GIT/00. Essentials.md",
+    "Programming/GIT/11. Stash - Rebase.md",
+    "Programming/JavaScript/01. Error Handling.md",
+    "Programming/JavaScript/05. For In, For Of.md",
+    "Programming/JavaScript/02. For Loop.md",
+    "Programming/JavaScript/04. Labeled loop.md",
+    "Programming/JavaScript/03. Do... While && While.md",
+    "Programming/JavaScript/00. Add JSON file to variable.md",
+    "Programming/MongoDB/05. Basic Commands.md",
+    "Programming/Search Methods",
+    "MiniPoolTable",
+    "Programming/SCSS/images",
+    "Programming/SCSS",
+    "Programming/Angular/Common Steps",
+    "Programming/WebProjects/CallManager Monitor",
     "CUCM/API",
-    "Programming/Docker/Images/Pasted image 20240525132150.png",
-    "Programming/Docker/Images/Pasted image 20240525134747.png",
     "Programming/Performance",
-    "Programming/Untitled",
-    "Programming/Docker/Images/robo3t.png",
-    "Programming/Docker/Images/mariadb example.png",
-    "Programming/Docker/Images/tableplus connec.png",
-    "Programming/Docker/Images/docker container.png",
-    "Programming/Docker/Images/docker desktop.png",
-    "Programming/Docker/Images/basics.png",
-    "Programming/Docker/world.txt",
-    "Programming/Docker/world.sql",
-    "Programming/Docker/Images",
-    "Programming/Docker/Excalidraw",
-    "Programming/Docker",
-    "Programming/MongoDB/Images/normalizaed.png",
-    "Programming/MongoDB/Images/getonemongo.png",
     "Untitled.canvas"
   ]
 }
