@@ -3,5 +3,12 @@
   "showLineNumber": false,
   "spellcheck": false,
   "alwaysUpdateLinks": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A3",
+    "landscape": true,
+    "margin": "2",
+    "downscalePercent": 100
+  }
 }

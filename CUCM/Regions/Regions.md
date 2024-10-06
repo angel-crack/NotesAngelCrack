@@ -1,103 +1,679 @@
-When an audio codec is selected for a call, Unified Communications Manager takes the matching codecs from both sides of a call leg, filters out the codecs that exceed the configured maximum audio bit rate, and then picks the preferred codec among the codecs that are remaining in the list.
+Author: Angel Ubarnes (aubarnes@cisco.com)
 
-![](data:image/png;base64,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)
+To match the codec for a call:
+1. Unified Communications Manager takes the matching codecs from both sides of a call leg, 
+2. filters out the codecs that exceed the configured maximum audio bit rate, 
+3. and then picks the preferred codec among the codecs that are remaining in the list.
 
-Phone A
+Supported Audio Codecs on CUCM:
 
-| Codec     | G.711a | G.711µ | G.729a | G.729ab | G.728 | iLBC |
-| --------- | ------ | ------ | ------ | ------- | ----- | ---- |
-| BandWidth | 64     | 64     | 64     | 64      | 16    | 32   |
-![](data:image/png;base64,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)
+| Audio Codec                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| G.711                                 | The most commonly supported codec, used over the public switched telephone network.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| G.722                                 | Wideband codec often used in video conferences. This is always preferred by Unified Communications Manager over G.711, unless G.722 is disabled.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| G.722.1                               | Low complexity wideband codec operating at 24 and 32 kb/s. The audio quality approaches that of G.722 while using, at most, half the bit rate.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| G.728                                 | Low bit rate codec that video endpoints support.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| G.729                                 | Low bit rate codec with 8 kb/s compression that is supported by Cisco IP Phone 7900, and typically used for calls across a WAN link.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| GSM                                   | The global system for mobile communications (GSM) codec. GSM enables the MNET system for GSM wireless handsets to operate with Unified Communications Manager.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| L16                                   | Advanced Audio Coding-Low Delay (AAC-LD) is a super-wideband audio codec that provides superior sound quality for voice and music. This codec provides equal or improved sound quality over older codecs, even at lower bit rates.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| AAC-LD (mpeg4-generic)                | Supported for SIP devices, in particular, Cisco TelePresence systems.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| AAC-LD (MP4A-LATM)                    | Low-overhead MPEG-4 Audio Transport Multiplex (LATM) is a super-wideband audio codec that provides superior sound. Supported for SIP devices including Tandberg and some third-party endpoints.<br><br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Internet Speech Audio Codec (iSAC)    | An adaptive wideband audio codec, specially designed to deliver wideband sound quality with low delay in both low and medium bit rate applications.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Internet Low Bit Rate Codec (iLBC)    | Provides audio quality between G.711 and G.729 at bit rates of 15.2 and 13.3 kb/s while allowing for graceful speech quality degradation in a lossy network due to independently encoded speech frames. iLBC is supported for SIP, SCCP, H323, and MGCP devices.<br><br>                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Adaptive Multi-Rate (AMR)             | The required standard codec for 2.5G/3G wireless networks based on GSM (WDMA, EDGE, GPRS). This codec encodes narrowband (200-3400 Hz) signals at variable bit rates ranging from 4.75 to 12.2 kb/s with toll quality speech starting at 7.4 kb/s. AMR is supported only for SIP devices.                                                                                                                                                                                                                                                                                                                                                                                               |
+| Adaptive Multi-Rate Wideband (AMR-WB) | Codified as G.722.2, an ITU-T standard speech codec formally known as Wideband, codes speech at about 16 kb/s. This codec is preferred over other narrowband speech codecs such as AMR and G.711 because it provides better speech quality due to a wider speech bandwidth of 50 Hz to 7000 Hz. AMR-WB is supported only for SIP devices.                                                                                                                                                                                                                                                                                                                                               |
+| Opus                                  | Opus codec is an interactive speech and audio codec, specially designed to handle a wide range of interactive audio applications such as voice over IP, video conferencing, in-game chat, and live distributed music performance.<br><br>This codec scales from narrowband low bit rate to a very high quality bit rate ranging from 6 to 510 kb/s.<br><br>Opus codec support is enabled by default for all SIP devices. You can reconfigure Opus support via the Opus Codec Enabled service parameter (the default setting is Enabled for All Devices ). You can reconfigure this parameter to disable Opus codec support, or to enable support in non-recording devices only.<br><br> |
+The supported codec by CUCM can be checked by:
 
-Phone B
+``` sql
+admin:run sql select * from typecodec
 
-| Codec     | G.711a | G.711 | G.729 | G.726 | G.722 | G.728 |
-| --------- | ------ | ----- | ----- | ----- | ----- | ----- |
-| BandWidth | 64     | 64    | 8     | 24    | 64    | 16    |
+enum name                       moniker                          tkmedia minimumbandwidth defaultorder
+==== ========================== ================================ ======= ================ ============
+2    G.711 A-Law 64k            CODEC_G711_A_LAW_64k             1       64               18
+3    G.711 A-Law 56k            CODEC_G711_A_LAW_56k             1       56               20
+4    G.711 U-Law 64k            CODEC_G711_U_LAW_64k             1       64               17
+5    G.711 U-Law 56k            CODEC_G711_U_LAW_56k             1       56               19
+6    G.722 64k                  CODEC_G722_64k                   1       64               8
+7    G.722 56k                  CODEC_G722_56k                   1       56               13
+8    G.722 48k                  CODEC_G722_48k                   1       48               15
+9    G.723.1 7k                 CODEC_G723_1_7k                  1       7                31
+10   G.728 16k                  CODEC_G728_16k                   1       16               22
+11   G.729 8k                   CODEC_G729_8k                    1       8                28
+12   G.729a 8k                  CODEC_G729a_8k                   1       8                29
+15   G.729b 8k                  CODEC_G729b_8k                   1       8                26
+16   G.729ab 8k                 CODEC_G729ab_8k                  1       8                27
+18   GSM Full Rate 13k          CODEC_GSM_FULL_RATE_13k          1       13               25
+19   GSM Half Rate 6k           CODEC_GSM_HALF_RATE_6k           1       6                30
+20   GSM Enhanced Full Rate 13k CODEC_GSM_ENHANCED_FULL_RATE_13k 1       13               24
+25   L16 256k                   CODEC_L16_256k                   1       256              5
+40   G.722.1 32k                CODEC_G722_1_32k                 1       32               12
+41   G.722.1 24k                CODEC_G722_1_24k                 1       24               14
+42   AAC-LD (MP4A Generic)      CODEC_LOSS_AAC_LD                1       256              2
+43   MP4A-LATM 128k             CODEC_MP4A_LATM128k              1       128              1
+44   MP4A-LATM 64k              CODEC_MP4A_LATM_64k              1       64               3
+45   MP4A-LATM 56k              CODEC_MP4A_LATM_56k              1       56               4
+46   MP4A-LATM 48k              CODEC_MP4A_LATM_48k              1       48               6
+47   MP4A-LATM 32k              CODEC_MP4A_LATM_32k              1       32               10
+48   MP4A-LATM 24k              CODEC_MP4A_LATM_24k              1       24               16
+86   ILBC 16k                   CODEC_ILBC_16k                   1       16               21
+89   ISAC 32k                   CODEC_ISAC_32k                   1       32               9
+97   AMR (5k-13k)               CODEC_AMR                        1       5                23
+98   AMR-WB (7k-24k)            CODEC_AMR_WB                     1       7                11
+90   OPUS (6k-510k)             CODEC_OPUS   
+```
 
 
-![](data:image/png;base64,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)
+Let's suppose, we have a call from Phone A (blue one) to Phone B (yellow one)
 
-If MaxBitRate configured by 32kbps, filtering out:
+![[Pasted image 20240918173813.png]]
 
-| Codec  | G.728 | iLBC | G.726 | G.729 |
-| ------ | ----- | ---- | ----- | ----- |
-| PhoneA | 16    | 32   |       |       |
-| PhoneB | 16    | 32   | 24    | 8     |
+![[Pasted image 20240918101535.png]]
+Phone A, Codecs Supported:
 
-Then, CUCM will select the preferred codec among the codec preferred list
+```
+╔═══════════╤════════╤════════╤════════╤═════════╤═══════╤══════╗
+║ Codec     │ G.711a │ G.711µ │ G.729  │ G.729ab │ G.728 │ iLBC ║
+╠═══════════╪════════╪════════╪════════╪═════════╪═══════╪══════╣
+║ BandWidth │ 64     │ 64     │ 8      │ 64      │ 16    │ 16   ║
+╚═══════════╧════════╧════════╧════════╧═════════╧═══════╧══════╝
+```
 
-Supported Audio Codecs on CUCM.
+![[Pasted image 20240918101619.png]]
+Phone B, Codecs Supported:
 
-| Audio Codec                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| G.711                                 | The most commonly supported codec, used over the public switched telephone network.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| G.722                                 | Wideband codec often used in video conferences. This is always preferred by Unified Communications Manager over G.711, unless G.722 is disabled.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| G.722.1                               | Low complexity wideband codec operating at 24 and 32 kb/s. The audio quality approaches that of G.722 while using, at most, half the bit rate.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| G.728                                 | Low bit rate codec that video endpoints support.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| G.729                                 | Low bit rate codec with 8 kb/s compression that is supported by Cisco IP Phone 7900, and typically used for calls across a WAN link.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| GSM                                   | The global system for mobile communications (GSM) codec. GSM enables the MNET system for GSM wireless handsets to operate with Unified Communications Manager.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| L16                                   | Advanced Audio Coding-Low Delay (AAC-LD) is a super-wideband audio codec that provides superior sound quality for voice and music. This codec provides equal or improved sound quality over older codecs, even at lower bit rates.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| AAC-LD (mpeg4-generic)                | Supported for SIP devices, in particular, Cisco TelePresence systems.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| AAC-LD (MP4A-LATM)                    | Low-overhead MPEG-4 Audio Transport Multiplex (LATM) is a super-wideband audio codec that provides superior sound. Supported for SIP devices including Tandberg and some third-party endpoints.<br>Note AAC-LD (mpeg4-generic) and AAC-LD (MPA4-LATM) are not compatible.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Internet Speech Audio Codec (iSAC)    | An adaptive wideband audio codec, specially designed to deliver wideband sound quality with low delay in both low and medium bit rate applications.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Internet Low Bit Rate Codec (iLBC)    | Provides audio quality between G.711 and G.729 at bit rates of 15.2 and 13.3 kb/s while allowing for graceful speech quality degradation in a lossy network due to independently encoded speech frames. iLBC is supported for SIP, SCCP, H323, and MGCP devices.<br>Note H.323 Outbound FastStart does not support the iLBC codec.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Adaptive Multi-Rate (AMR)             | The required standard codec for 2.5G/3G wireless networks based on GSM (WDMA, EDGE, GPRS). This codec encodes narrowband (200-3400 Hz) signals at variable bit rates ranging from 4.75 to 12.2 kb/s with toll quality speech starting at 7.4 kb/s. AMR is supported only for SIP devices.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Adaptive Multi-Rate Wideband (AMR-WB) | Codified as G.722.2, an ITU-T standard speech codec formally known as Wideband, codes speech at about 16 kb/s. This codec is preferred over other narrowband speech codecs such as AMR and G.711 because it provides better speech quality due to a wider speech bandwidth of 50 Hz to 7000 Hz. AMR-WB is supported only for SIP devices.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Opus                                  | Opus codec is an interactive speech and audio codec, specially designed to handle a wide range of interactive audio applications such as voice over IP, video conferencing, in-game chat, and live distributed music performance.<br><br>This codec scales from narrowband low bit rate to a very high quality bit rate ranging from 6 to 510 kb/s.<br><br>Opus codec support is enabled by default for all SIP devices. You can reconfigure Opus support via the Opus Codec Enabled service parameter (the default setting is Enabled for All Devices ). You can reconfigure this parameter to disable Opus codec support, or to enable support in non-recording devices only.<br><br>Note Opus has a dependency on the G.722 codec. The Advertise G.722 Codec enterprise parameter should also be set to Enabled for SIP devices to use Opus. |
+```
+╔═══════════╤════════╤═══════╤═══════╤═══════╤═══════╤═══════╗
+║ Codec     │ G.711a │ iLBC  │ G.729 │ G.726 │ G.722 │ G.728 ║
+╠═══════════╪════════╪═══════╪═══════╪═══════╪═══════╪═══════╣
+║ BandWidth │ 64     │ 16    │ 8     │ 24    │ 64    │ 16    ║
+╚═══════════╧════════╧═══════╧═══════╧═══════╧═══════╧═══════╝
+```
 
-[+] Default Audio Codec Preference List
+On CUCM
+![[Pasted image 20240918101709.png]]
 
-![[codeclistDefault.png]]
+If MaxBitRate configured between the Region of Phone A and Phone B is configured to 32kbps, it will filter out:
 
-[+] To check the Audio Codec Preference List with their codecs a bandwidth we can use this SQL:
+```
+╔════════╤═══════╤══════╤═══════╤═══════╗
+║ Codec  │ G.728 │ iLBC │ G.726 │ G.729 ║
+╠════════╪═══════╪══════╪═══════╪═══════╣
+║ PhoneA │ 16    │ 16   │       │ 8     ║
+╟────────┼───────┼──────┼───────┼───────╢
+║ PhoneB │ 16    │ 16   │ 24    │ 8     ║
+╚════════╧═══════╧══════╧═══════╧═══════╝
+```
 
-```sql
+Then, CUCM will remove the codecs not supported for both parties ⇒ { G.728, iLBC, G.729 }
 
+```
+╔════════╤═══════╤══════╤═══════╗
+║ Codec  │ G.728 │ iLBC │ G.729 ║
+╠════════╪═══════╪══════╪═══════╣
+║ PhoneA │ 16    │ 16   │ 8     ║
+╟────────┼───────┼──────┼───────╢
+║ PhoneB │ 16    │ 16   │ 8     ║
+╚════════╧═══════╧══════╧═══════╝
+```
+
+Then, CUCM will select one codec by matching that above list with ⇒ { G.728, iLBC, G.729 } by checking the CodecList configured for the region relationship between Regions between phones. In this case Factory Default lossy.
+
+
+![[Pasted image 20240918173813.png]]
+
+| Region                           | CodecList             | Audio_BW | Video BW | Immersive |
+| -------------------------------- | --------------------- | -------- | -------- | --------- |
+| Region_A_Test With Region_B_Test | Factory Default lossy | 32       | 18       | 6         |
+
+[+] Checking the content of the codec prerence list, CUCM will look top to down until matches on of the codec inside ⇒  { G.728, iLBC, G.729 }, the first one matched is ILBC, so, for that Call We will use ILBC:
+
+``` sql hl:"23,4"
 run sql select cl.name as codec_preference_list, cl.description,c.name as codec,clm.preferenceorder as preference,c.minimumbandwidth as kbps,c.enum as payload from codeclistmember as clm \
 inner join codeclist as cl on clm.fkcodeclist = cl.pkid \
 inner join typecodec as c on c.enum = clm.tkcodec \
+where cl.name  = 'Factory Default lossy' \
 order by cl.name,clm.preferenceorder,kbps ASC
-```
 
-[+] The Output will look like this:
 
-```sql
-region_a      region_b      codec_list                           audio_bw video_bw immersive_bw
-============= ============= ==================================== ======== ======== ============
-AngelTest     AngelTest     Factory Default lossy                8        64       16
-dCloud_Region dCloud_Region Factory Default low loss - No G722.1 64       64       64
-AngelTest     dCloud_Region Factory Default low loss             64       16       8
-```
-
-[+] For example if we have a match between AngelTest && AngelTest, the codec preference list will be **Factory Default Lossy**
-
-```sql
-codec_preference_list codec                      preference kbps payload
+codec_preference_list codec                      preference kbps payload
 ===================== ========================== ========== ==== =====
-Factory Default lossy OPUS (6k-510k)             1          6    90
-Factory Default lossy MP4A-LATM 56k              4          56   45
-Factory Default lossy MP4A-LATM 48k              6          48   46
-Factory Default lossy ISAC 32k                   8          32   89
-Factory Default lossy AMR-WB (7k-24k)            9          7    98
-Factory Default lossy MP4A-LATM 32k              10         32   47
-Factory Default lossy G.722.1 32k                12         32   40
-Factory Default lossy G.722 56k                  13         56   7
-Factory Default lossy G.722.1 24k                14         24   41
-Factory Default lossy G.722 48k                  15         48   8
-Factory Default lossy MP4A-LATM 24k              16         24   48
-Factory Default lossy G.711 U-Law 56k            19         56   5
-Factory Default lossy G.711 A-Law 56k            20         56   3
-Factory Default lossy ILBC 16k                   21         16   86
-Factory Default lossy G.728 16k                  22         16   10
-Factory Default lossy AMR (5k-13k)               23         5    97
-Factory Default lossy GSM Enhanced Full Rate 13k 24         13   20
-Factory Default lossy GSM Full Rate 13k          25         13   18
-Factory Default lossy G.729b 8k                  26         8    15
-Factory Default lossy G.729ab 8k                 27         8    16
-Factory Default lossy G.729 8k                   28         8    11
-Factory Default lossy G.729a 8k                  29         8    12
-Factory Default lossy GSM Half Rate 6k           30         6    19
-Factory Default lossy G.723.1 7k                 31         7    9
+Factory Default lossy OPUS (6k-510k)             1          6    90
+Factory Default lossy MP4A-LATM 56k              4          56   45
+Factory Default lossy MP4A-LATM 48k              6          48   46
+Factory Default lossy ISAC 32k                   8          32   89
+Factory Default lossy AMR-WB (7k-24k)            9          7    98
+Factory Default lossy MP4A-LATM 32k              10         32   47
+Factory Default lossy G.722.1 32k                12         32   40
+Factory Default lossy G.722 56k                  13         56   7
+Factory Default lossy G.722.1 24k                14         24   41
+Factory Default lossy G.722 48k                  15         48   8
+Factory Default lossy MP4A-LATM 24k              16         24   48
+Factory Default lossy G.711 U-Law 56k            19         56   5
+Factory Default lossy G.711 A-Law 56k            20         56   3
+Factory Default lossy ILBC 16k                   21         16   86
+Factory Default lossy G.728 16k                  22         16   10
+Factory Default lossy AMR (5k-13k)               23         5    97
+Factory Default lossy GSM Enhanced Full Rate 13k 24         13   20
+Factory Default lossy GSM Full Rate 13k          25         13   18
+Factory Default lossy G.729b 8k                  26         8    15
+Factory Default lossy G.729ab 8k                 27         8    16
+Factory Default lossy G.729 8k                   28         8    11
+Factory Default lossy G.729a 8k                  29         8    12
+Factory Default lossy GSM Half Rate 6k           30         6    19
+Factory Default lossy G.723.1 7k                 31         7    9
+```
+
+
+ =====================
+``` hl:"g.729"
+╔════════╤═══════╤══════╤═══════╤═══════╗
+║ Codec  │ G.728 │ iLBC │ G.726 │ G.729 ║
+╠════════╪═══════╪══════╪═══════╪═══════╣
+║ PhoneA │ 16    │ 32   │       │ 8     ║
+╟────────┼───────┼──────┼───────┼───────╢
+║ PhoneB │ 16    │ 32   │ 24    │ 8     ║
+╚════════╧═══════╧══════╧═══════╧═══════╝
+```
+
+[+] We can check the region relationship
+
+``` sql
+run sql select s1.name as Region_A, s2.name as Region_B, cdl.name as Codec_list,rgm.audiobandwidth as Audio_BW, rgm.videobandwidth as Video_BW, rgm.immersivebandwidth as Immersive_BW from regionmatrix as rgm left join region as s2 on rgm.fkregion_b = s2.pkid left join region as s1 on rgm.fkregion_a = s1.pkid left join codeclist as cdl on cdl.pkid = rgm.fkcodeclist order by audio_bw ASC
+
+region_a      region_b      codec_list                           audio_bw video_bw immersive_bw
+============= ============= ==================================== ======== ======== ============
+AngelTest     AngelTest     Factory Default lossy                8        64       16
+dCloud_Region dCloud_Region Factory Default low loss - No G722.1 64       64       64
+AngelTest     dCloud_Region Factory Default low loss             64       16       8
+
+```
+
+
+
+
+============================ Recreation  ===============================
+
+1. Create CM Group: CM_Group_Test and Assign the publisher to this group
+
+![[Pasted image 20240918174951.png]]
+
+```sql hl:3,8,CM_group_test
+run sql insert into callmanagergroup (name) values ('CM_group_test')
+
+^ Adding 'CM_group_test' as CallManager Group 
+
+
+run sql insert into callmanagergroupmember (fkcallmanagergroup,fkcallmanager,priority) values ((select pkid from callmanagergroup where name like 'CM_group_test'),(select pkid from callmanager where ctiid = 1),1)
+
+^Assign Pub to that CM Group
+
+```
+
+2. Create a DateTimeGroup with default settings (this is just a required field when creating a DevicePool)
+
+``` sql
+run sql insert into datetimesetting (name) values ('DTG_test')
+```
+
+![[Pasted image 20240918175535.png]]
+
+3. Create 2 Regions
+
+```sql
+run sql insert into region (name) values ('Region_A_Test')
+
+run sql insert into region (name) values ('Region_B_Test')
+```
+
+![[Pasted image 20240918175545.png]]
+
+
+4. Create two Device Pool with Regions, CM Group and Date Time Group
+
+``` sql hl:DTG_test,Region_A_Test,CM_group_test,Region_B_Test,DevicePool_A_Test,DevicePool_B_Test
+run sql insert into devicepool (fkcallmanagergroup,fkdatetimesetting,fkregion,name) values ((select pkid from callmanagergroup where name like 'CM_group_test'),(select pkid from datetimesetting where name like 'DTG_test'),(select pkid from region where name like 'Region_A_Test'),'DevicePool_A_Test')
+
+run sql insert into devicepool (fkcallmanagergroup,fkdatetimesetting,fkregion,name) values ((select pkid from callmanagergroup where name like 'CM_group_test'),(select pkid from datetimesetting where name like 'DTG_test'),(select pkid from region where name like 'Region_B_Test'),'DevicePool_B_Test')
+```
+
+![[Pasted image 20240918175922.png]]
+
+
+5. Create two devices and assign to different regions, and make sure they are able to call between them.
+
+![[Pasted image 20240918180142.png]]Codecs for IP Communicator: [https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/ip-communicator/data_sheet_c78-669663.html](https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/ip-communicator/data_sheet_c78-669663.html)
+Codecs for Jabber Windows: [https://community.cisco.com/t5/collaboration-applications/jabber-for-windows-codec-support/td-p/3031937](https://community.cisco.com/t5/collaboration-applications/jabber-for-windows-codec-support/td-p/3031937)>
+```
+╔══════════════════════════════════════════════════════╤════════════════════╗
+║ Codec Ip Communicatior                               │ Codec Jabber       ║
+╠══════════════════════════════════════════════════════╪════════════════════╣
+║ G.722 wideband,                                      │ G.711 A-law        ║
+╟──────────────────────────────────────────────────────┼────────────────────╢
+║ G.711a,                                              │ G.711 µ-law/Mu-law ║
+╟──────────────────────────────────────────────────────┼────────────────────╢
+║ G711ų,                                               │ G.722              ║
+╟──────────────────────────────────────────────────────┼────────────────────╢
+║ iLBCm,                                               │ G.722.1            ║
+╟──────────────────────────────────────────────────────┼────────────────────╢
+║ G.729a,                                              │ G.729              ║
+╟──────────────────────────────────────────────────────┼────────────────────╢
+║ G.729ab,                                             │ G.729a             ║
+╟──────────────────────────────────────────────────────┼────────────────────╢
+║ G.729b (Skinny Client Control Protocol [SCCP] only), │ Opus               ║
+╟──────────────────────────────────────────────────────┼────────────────────╢
+║ Internet Speech Audio Codec (iSAC)                   │                    ║
+╚══════════════════════════════════════════════════════╧════════════════════╝
+```
+
+6. We are gonna try to use different codecs based on regions:
+
+```
+╔═══════════════╤═══════════════╤═══════════════════════╤═════════════════╗
+║ Region A      │ Region B      │ CodecList             │ Codec           ║
+╠═══════════════╪═══════════════╪═══════════════════════╪═════════════════╣
+║ Region_A_Test │ Region_B_Test │ Codec list g729a      │ G.729a 8k       ║
+╟───────────────┼───────────────┼───────────────────────┼─────────────────╢
+║ Region_A_Test │ Region_A_Test │ Codec list g729 a-law │ G.711 A-Law 64k ║
+╟───────────────┼───────────────┼───────────────────────┼─────────────────╢
+║ Region_B_Test │ Region_B_Test │ Codec list g729 u-law │ G.711 U-Law 64k ║
+╚═══════════════╧═══════════════╧═══════════════════════╧═════════════════╝
+```
+
+![[Pasted image 20240918181257.png]]
+
+![[Pasted image 20240918181352.png]]
+
+![[Pasted image 20240918181811.png]]
+
+7.  Create 3 Audio Codec Preference List
+
+```sql
+run sql insert into codeclist (name,description,isstandard) values ('Codec list g729a','Testing purposes for g729a','f')
+
+run sql insert into codeclistmember (fkcodeclist,tkcodec,preferenceorder) values ((select pkid from codeclist where name like 'Codec list g729a'),(select enum from typecodec where name like 'G.729a 8k'),1)
+```
+
+```sql
+run sql insert into codeclist (name,description,isstandard) values ('Codec list g729 a-law','Testing purposes for g729alaw','f')
+
+run sql insert into codeclistmember (fkcodeclist,tkcodec,preferenceorder) values ((select pkid from codeclist where name like 'Codec list g729 a-law'),(select enum from typecodec where name like 'G.711 A-Law 64k'),1)
+```
+
+```sql
+run sql insert into codeclist (name,description,isstandard) values ('Codec list g729 u-law','Testing purposes for g729Ulaw','f')
+
+run sql insert into codeclistmember (fkcodeclist,tkcodec,preferenceorder) values ((select pkid from codeclist where name like 'Codec list g729 u-law'),(select enum from typecodec where name like 'G.711 U-Law 64k'),1)
+```
+
+8. Creating the regions relationships and assign it the preferred codeclist
+
+``` sql
+run sql insert into regionmatrix (fkregion_a,fkregion_b,videobandwidth,fkcodeclist,immersivebandwidth,audiobandwidth) values ((select pkid from region where name like 'Region_A_Test'),(select pkid from region where name like 'Region_B_Test'),6000,(select pkid from codeclist where name like 'Codec list g729a'),2147483647,8)
+
+run sql insert into regionmatrix (fkregion_a,fkregion_b,videobandwidth,fkcodeclist,immersivebandwidth,audiobandwidth) values ((select pkid from region where name like 'Region_A_Test'),(select pkid from region where name like 'Region_A_Test'),6000,(select pkid from codeclist where name like 'Codec list g729 a-law'),2147483647,64)
+
+run sql insert into regionmatrix (fkregion_a,fkregion_b,videobandwidth,fkcodeclist,immersivebandwidth,audiobandwidth) values ((select pkid from region where name like 'Region_B_Test'),(select pkid from region where name like 'Region_B_Test'),6000,(select pkid from codeclist where name like 'Codec list g729 u-law'),2147483647,64)
+```
+
+9. Checking The relationships
+``` sql
+run sql select s1.name as Region_A, s2.name as Region_B, cdl.name as Codec_list,rgm.audiobandwidth as Audio_BW, rgm.videobandwidth as Video_BW, rgm.immersivebandwidth as Immersive_BW from regionmatrix as rgm left join region as s2 on rgm.fkregion_b = s2.pkid left join region as s1 on rgm.fkregion_a = s1.pkid left join codeclist as cdl on cdl.pkid = rgm.fkcodeclist order by audio_bw ASC
+
+region_a      region_b      codec_list                           audio_bw video_bw immersive_bw
+============= ============= ==================================== ======== ======== ============
+Region_A_Test Region_B_Test Codec list g729a                     8        6000     2147483647
+Region_A_Test Region_A_Test Codec list g729 a-law                64       6000     2147483647
+Region_B_Test Region_B_Test Codec list g729 u-law                64       6000     2147483647
+```
+
+10. We do Receive the supported codecs for the device on the SDP content Either on Invite (early offer) or 200ok (delay offer)
+
+[+] SDP IP Communicator
+
+``` C
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:18 G729/8000
+a=rtpmap:9 G722/8000
+a=rtpmap:116 iLBC/8000
+a=rtpmap:124 ISAC/16000
+a=rtpmap:101 telephone-event/8000
+```
+
+[+] SDP Jabber
+
+```c
+a=rtpmap:114 opus/48000/2
+a=rtpmap:9 G722/8000
+a=rtpmap:104 G7221/16000
+a=rtpmap:105 G7221/16000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:101 telephone-event/8000
+a=rtpmap:100 H264/90000
+a=rtpmap:98 H264/90000
+a=rtpmap:126 H264/90000
+a=rtpmap:97 H264/90000
+a=rtpmap:111 x-ulpfecuc/8000
+a=rtpmap:98 H264/90000
+a=rtpmap:126 H264/90000
+a=rtpmap:97 H264/90000
+a=rtpmap:111 x-ulpfecuc/8000
+a=rtpmap:125 H224/4800
+```
+
+NOTE:
+
+The payload (number identififer for a Codec) for the codecs that SIP protocol uses is different that the codec payload that CUCM handle internally, from the below table we can know what are they on CUCM.
+
+```sql
+admin:run sql select enum,name from typecodec
+enum name
+==== ==========================
+2    G.711 A-Law 64k
+3    G.711 A-Law 56k
+4    G.711 U-Law 64k
+5    G.711 U-Law 56k
+6    G.722 64k
+7    G.722 56k
+8    G.722 48k
+9    G.723.1 7k
+10   G.728 16k
+11   G.729 8k
+12   G.729a 8k
+15   G.729b 8k
+16   G.729ab 8k
+18   GSM Full Rate 13k
+19   GSM Half Rate 6k
+20   GSM Enhanced Full Rate 13k
+25   L16 256k
+40   G.722.1 32k
+41   G.722.1 24k
+42   AAC-LD (MP4A Generic)
+43   MP4A-LATM 128k
+44   MP4A-LATM 64k
+45   MP4A-LATM 56k
+46   MP4A-LATM 48k
+47   MP4A-LATM 32k
+48   MP4A-LATM 24k
+86   ILBC 16k
+89   ISAC 32k
+97   AMR (5k-13k)
+98   AMR-WB (7k-24k)
+90   OPUS (6k-510k)
+```
+
+If a device sends a codec on the SDP message and this is not handle by CUCM it will be ignored.
+
+For cheking the payloads for SIP, refer to:
+[https://www.iana.org/assignments/rtp-parameters/rtp-parameters.xhtml](https://www.iana.org/assignments/rtp-parameters/rtp-parameters.xhtml)
+
+[+] From CUCM Traces we can get the region relationship for two legs
+
+``` c hl:"MediaConnectRequest,MediaCoordinator,audioCapCount,region"
+10287403.000 |09:18:24.452 |SdlSig   |MediaConnectRequest                    |wait                           |MediaCoordinator(1,100,118,1)    |ConnectionManager(1,100,44,1)    |1,100,251,4851.2304^198.18.1.36^*        |[R:N-H:0,N:3,L:0,V:0,Z:0,D:0] 
+Party1: MR=0 
+CI=30514126 audioCapCount=7 region=Region_A_Test xferMode=16 mrid=0 audioId=0 MMCap=0x1 sipConfig: BFCPAllowed=F IXAllowed=F activeCap=0 cryptoCapCount=0 flushIns=0 dtm.mode=0 dtm.CI=0 dtm.MTPForDTMF=F IFPid=(0,0,0,0) dtMedia=F honorCodec=F EOType=0  DTMF Caps(1,3,(101:8000,),0,F) confID=0 connType=3 connStatus=0 mtpPre=F teleEve=0 IFCreated=F IFHandling=0 FS=0 mcNodeId=0LatentCaps=null dtm.mode=0 dtm.CI=0 dtm.MTPForDTMF=F 
+Party2: MR=0 
+CI=30514127 audioCapCount=7 region=Region_B_Test xferMode=16 mrid=0 audioId=0 MMCap=0x3f sipConfig: BFCPAllowed=T IXAllowed=T activeCap=0 cryptoCapCount=0 flushIns=0 dtm.mode=0 dtm.CI=0 dtm.MTPForDTMF=F IFPid=(0,0,0,0) dtMedia=F honorCodec=F EOType=0  DTMF Caps(1,3,(101:8000,),0,F) confID=0 connType=3 connStatus=0 mtpPre=F teleEve=0 IFCreated=F IFHandling=0 FS=0 mcNodeId=0LatentCaps=null dtm.mode=0 dtm.CI=0 dtm.MTPForDTMF=F 
+reConnType=0 videoCall=F AllowedCallType=0x0 mtpChanged=F precLvl=5 resCap=0 party1.mMediaCoordinatorNodeId=0 party2.mMediaCoordinatorNodeId=0 sideBAns= T
+```
+
+To look all this lines on a set of files, we can search for:
+
+```c, hl:1|CI=\d+
+\d+\.\d{3} \|\d+:\d+:\d+\.\d{3} \|SdlSig.+\|MediaConnectRequest.+\|MediaCoordinator.+\|ConnectionManager.+Party1\:.+CI=\d+ audioCapCount=\d+ region=.+
+```
+
+If we have the Party A CI, example for 30514126 :
+
+```c, hl:1|30514126
+\d+\.\d{3} \|\d+:\d+:\d+\.\d{3} \|SdlSig.+\|MediaConnectRequest.+\|MediaCoordinator.+\|ConnectionManager.+Party1\:.+CI=30514126 audioCapCount=\d+ region=.+
+```
+
+If we have the Party B CI, example for 30514127 :
+
+```c, hl:1|30514127
+\d+\.\d{3} \|\d+:\d+:\d+\.\d{3} \|SdlSig.+\|MediaConnectRequest.+\|MediaCoordinator.+\|ConnectionManager.+Party1\:.+CI=\d+ audioCapCount=\d+ region=.+Party2: MR=0 CI=30514127.+
+```
+
+MediaCoordinator will create MediaManager process
+
+```c,hl:1|17
+10287403.001 |09:18:24.452 |Created  |MediaManager(1,100,119,17)|MediaCoordinator(1,100,118,1)|NumOfCurrentInstances: 1
+```
+
+Then, MediaManager and its number of instace will show this message when we can see the codecs
+
+```c,hl:1|(17)
+10287413.006 |09:18:24.452 |AppInfo  |DET-MediaManager-(17)::preCheckCapabilities,
+region1=Region_A_Test, region2=Region_B_Test,
+Pty1 capCount=7 (Cap,ptime)= (4,20) (2,20) (11,20) (12,20) (6,20) (86,20) (89,30),
+Pty2 capCount=7 (Cap,ptime)= (40,0) (41,0) (4,20) (2,20) (11,20) (12,20) (115,0)
+```
+
+| Trace   | Payload | Codec           | Advertised Codec on SIP Invite |
+| ------- | ------- | --------------- | ------------------------------ |
+| (4,20)  | 4       | G.711 U-Law 64k | a=rtpmap:0 PCMU/8000           |
+| (2,20)  | 2       | G.711 A-Law 64k | a=rtpmap:8 PCMA/8000           |
+| ==(11,20)== | ==11==      | ==G.729 8k==        | ==a=rtpmap:18 G729/8000==          |
+| ==(12,20)== | ==12==      | ==G.729a 8k==       | ==a=fmtp:18 annexb=no==            |
+| (6,20)  | 6       | G.722 64k       | a=rtpmap:9 G722/8000           |
+| (86,20) | 86      | ILBC 16k        | a=rtpmap:116 iLBC/8000         |
+| (89,30) | 89      | ISAC 32k        | a=rtpmap:124 ISAC/16000        |
+
+| Trace    | Payload | Codec           | Advertised Codec on SIP Invite |
+| -------- | ------- | --------------- | ------------------------------ |
+| (40,0)   | 40      | G.722.1 32k     | a=rtpmap:105 G7221/16000       |
+| (41,0)   | 41      | G.722.1 24k     | a=fmtp:105 bitrate=24000       |
+| (4,20)   | 4       | G.711 U-Law 64k | a=rtpmap:0 PCMU/8000           |
+| (2,20)   | 2       | G.711 A-Law 64k | a=rtpmap:8 PCMA/8000           |
+| ==(11,20)==  | ==11==      | ==G.729 8k==        | ==a=rtpmap:18 G729/8000==          |
+| ==(12,20)==  | ==12==      | ==G.729a 8k==       | ==a=fmtp:18 annexb=no==            |
+| (115,30) | 115     | H264_FEC        | a=rtpmap:100 H264/90000        |
+We will be using the the codec list Codec list g729a this inter region is set to 8kbps, and the preference codec is G.729a 8k with payload 12
+
+``` hl:3
+region_a      region_b      codec_list                           audio_bw video_bw immersive_bw
+============= ============= ==================================== ======== ======== ============
+Region_A_Test Region_B_Test Codec list g729a                     8        6000     2147483647
+Region_A_Test Region_A_Test Codec list g729 a-law                64       6000     2147483647
+Region_B_Test Region_B_Test Codec list g729 u-law                64       6000     2147483647
+```
+
+```hl:5
+codec_preference_list                description                   codec                      preference kbps payload
+==================================== ============================= ========================== ========== ==== =======
+Codec list g729 a-law                Testing purposes for g729alaw G.711 A-Law 64k            1          64   2
+Codec list g729 u-law                Testing purposes for g729Ulaw G.711 U-Law 64k            1          64   4
+Codec list g729a                     Testing purposes for g729a    G.729a 8k                  1          8    12
+```
+
+MediaManager creates MediaExchange
+
+```c
+10287413.014 |09:18:24.452 |Created|MediaExchange(1,100,114,20)      |MediaManager(1,100,119,17)|NumOfCurrentInstances: 1
+```
+
+Notice that this MediaExchange creates two instances of SipInterface and checks InterRegion bandwith
+
+```c hl:"SIPInterface,AppInfo"
+
+10287415.008 |09:18:24.453 
+|AppInfo  |DET-SIPInterface-(0)- CI=30514126
+mrId=0 PartySide=65 
+HOP RegionBwKbps[ A=8 V = 6000 I = 2147483647 ]  E2E RegionBwKbps[ A=8 V = 6000 I = 2147483647 ]
+
+vid=0 AllowedCallType=0x00000001 MCast=0 port=61385 IpAddrMode(my=0 peer=0 farEnd=0) XferMode(peer=16 farEnd=0) mediaReq=0 farEndMedReq=0 PassThru(A=2 V=2) Qos(0,1) vidPref(0) isPartyA(1) otherAgentPorts=0  FSInfo=0
+
+10287415.009 |09:18:24.453 |Created|SIPInterface(1,100,186,4)        |MediaExchange(1,100,114,20)|NumOfCurrentInstances: 1
+
+10287415.010 |09:18:24.453 |AppInfo  |DET-SIPInterface-(0)- CI=30514127 mrId=0 PartySide=66 HOP RegionBwKbps[ A=8 V = 6000 I = 2147483647 ]  E2E RegionBwKbps[ A=8 V = 6000 I = 2147483647 ]  vid=0 AllowedCallType=0x00000001 MCast=0 port=57855 IpAddrMode(my=0 peer=0 farEnd=0) XferMode(peer=16 farEnd=0) mediaReq=0 farEndMedReq=0 PassThru(A=2 V=2) Qos(0,1) vidPref(0) isPartyA(0) otherAgentPorts=0  FSInfo=0
+
+10287415.011 |09:18:24.453 |Created|SIPInterface(1,100,186,5)        |MediaExchange(1,100,114,20)|NumOfCurrentInstances: 2
+```
+
+According to the region BW the codecs will be filtering out, we see 11 and 12, G.729 8k and G.729a 8k, respectively
+
+```c
+10287461.014 |09:18:24.456 |AppInfo  |DET-SIPInterface-(5)::filterAudioCaps, doSort=1 audioRegion=8 kbps, nAudio=1 lineIndex=0
+10287461.015 |09:18:24.456 |AppInfo  |DET-SIPInterface-(5)::filterAudioCaps, mAudiomLine[0].capCount=7 index=0 after filter
+10287461.016 |09:18:24.456 |AppInfo  |DET-MediaUtility-::getClockRateList using default clockrate 8k for codec 11
+10287461.017 |09:18:24.456 |AppInfo  |DET-MediaUtility-::getClockRateList using default clockrate 8k for codec 12
+```
+
+Getting Codec from Preference List
+
+``` c
+10287461.021 |09:18:24.456 |AppInfo  |DET-MediaUtility-::getCodecPrefOption, xferModeA=16 xferModeB=16 honorOfferCodecPrefA=0 honorOfferCodecPrefB=0 PREF_LIST
+10287461.023 |09:18:24.456 |AppInfo  |DET-RegionsServer::matchCapabilities-- savedOption=1, PREF_LIST,
+regionA=Region_B_Test regionB=Region_A_Test
+latentCaps(A=0, B=0) kbps=8, capACount=7, capBCount=2
+```
+
+Getting G.729a 8k from the Audio Codec Preference List
+
+```c
+10287461.054 |09:18:24.456 |AppInfo  |DET-RegionsServer::matchCapabilities-- savedOption=0, PREF_LIST, 
+regionA=Region_B_Test regionB=Region_A_Test 
+latentCaps(A=0, B=0) kbps=8, capACount=7, capBCount=2
+10287461.055 |09:18:24.456 |AppInfo  |DET-SDPMsg-()::negotiateAudioCaps, audiomLine.caps[0].payloadCapability=12, maxFramesPerPacket=20,  dynamicPayload=0
+10287461.064 |09:18:24.456 |AppInfo  |DET-MediaUtility-::calculateAudioRawBitRateKbpsForNonSimulcastCall() - audBitRateKbps= 8 audRegKbps = 8 bitRateDir = Transmit codec = 12
+```
+
+Then we see an SDP answer from the AudioInterface from the Call Leg B, in this case:  SIPInterface(1,100,186,5), we can see the codec and the port selectd, and the IP as well
+
+``` c
+10287469.000 |09:18:24.457 |SdlSig   |SDPAnswer|outCall_200Rcvd|SIPCdpc(1,100,180,73)|SIPInterface(1,100,186,5)|1,100,251,4851.2304^198.18.1.36^*|[R:N-H:0,N:6,L:0,V:0,Z:0,D:0] ] 
+nAudio=1 stackIdx=1 audioCapCount=1 Caps[12(20)] port=18402 IP= ipAddrType=0 ipv4=10.16.169.162 
+SDPMode=0 mediaAttr=0x0 SP=F RTP=T SRTP=F idle=F QoS=F enabledMask=0 rtcbFbCount=0LatentCaps=null TCL_UNSPECIFIED ptime=0 ~nVideo=2 stackIdx=2 
+videoCapCount=4, 
+[100 pt=31 h235=0],
+[101 pt=34 h235=0 ver=0(H263VERSION_ORIG) bit_mask=0x0],
+[101 pt=96 h235=0 ver=1(H263VERSION_1998) bit_mask=0x0],
+[103 pt=97 h235=0] 
+port=0 ipAddrType=0 ipv4=10.16.169.162 SDPMode=3 RTP=T SRTP=F idle=F mVideoContentId=1 mContentTypeCount=0enabledMask=0rtcbFbCount=0 TCL_UNSPECIFIED, stackIdx=3 
+videoCapCount=4, 
+[100 pt=31 h235=0],
+[101 pt=34 h235=0 ver=0(H263VERSION_ORIG) bit_mask=0x0],
+[101 pt=96 h235=0 ver=1(H263VERSION_1998) bit_mask=0x0],
+[103 pt=97 h235=0] 
+port=0 ipAddrType=0 ipv4=10.16.169.162 SDPMode=3 RTP=T SRTP=F idle=F mVideoContentId=2 mContentTypeCount=0enabledMask=0rtcbFbCount=0 TCL_UNSPECIFIED ~nApp=1 stackIdx=5 
+CapCount=1,106 port=0 ipAddrType=0 ipv4=10.16.169.162 SDPMode=3 ~nT38Fax=0 ^nBFCPApp=1 stackIdx=4 port=0 ipAddrType=0 ipv4=0.0.0.0 flCtrlRoleMask=0 confID= userID= floorIdStrmAssoSize=0 ^nIXApp=1 stackIdx=6 port=0 ipAddrType=0 
+ipv4=10.16.169.162 xmapListSize=0 RTP=T SRTP=F Transport=17 DTMFMethod=3 DTMFConfig=1 RFC2833PT=(101:8000,) wantDTMF=0 provideOOB=F 
+keepAudiomLineForT38=F FaxInviteWithValidIP=F FCOffer=0 transID=0 mANATAddrPref=0V4 negIpAddrType=0V4 MTPAllocated=0 mAllowMultiCodecsInAnswer=F
+```
+
+For the other SipInterface
+
+```c
+10287475.008 |09:18:24.458 |AppInfo  |DET-SIPInterface-(4)::filterAudioCaps, doSort=1 audioRegion=8 kbps, nAudio=1 lineIndex=0
+10287475.009 |09:18:24.458 |AppInfo  |DET-SIPInterface-(4)::filterAudioCaps, mAudiomLine[0].capCount=7 index=0 after filter
+10287475.010 |09:18:24.458 |AppInfo  |DET-MediaUtility-::getClockRateList using default clockrate 8k for codec 11
+10287475.011 |09:18:24.458 |AppInfo  |DET-MediaUtility-::getClockRateList using default clockrate 8k for codec 12
+
+|10287475.045 \|09:18:24.458 \|AppInfo  \|DET-SDPMsg-()::negotiateAudioCaps, audiomLine.caps[0].payloadCapability=12, maxFramesPerPacket=20,  dynamicPayload=0<br><br>10287475.056 \|09:18:24.458 \|AppInfo  \|DET-MediaUtility-::calculateAudioRawBitRateKbpsForNonSimulcastCall() - audBitRateKbps= 8 audRegKbps = 8 bitRateDir = Transmit codec = 12|
+```
+
+```c
+10287482.000 |09:18:24.459 |SdlSig   |SDPAnswer|inCall_delivered|SIPCdpc(1,100,180,72)|SIPInterface(1,100,186,4)|1,100,251,4851.2304^198.18.1.36^*|[R:N-H:0,N:8,L:0,V:0,Z:0,D:0]  Unrecognized attributes: mAttrListSize=2  a=cisco-mari:v1 a=cisco-mari-rate] 
+nAudio=1 stackIdx=1 audioCapCount=1 Caps[12(20)] port=24632 IP= ipAddrType=0 ipv4=198.18.1.36 
+SDPMode=0 mediaAttr=0x0 SP=F RTP=T SRTP=F idle=F QoS=F enabledMask=0 rtcbFbCount=0
+LatentCaps=null TCL_UNSPECIFIED ptime=0 ~nVideo=0 ~nApp=0 ~nT38Fax=0 ^nBFCPApp=0 ^nIXApp=0 
+DTMFMethod=3 DTMFConfig=1 RFC2833PT=(101:8000,) wantDTMF=0 provideOOB=F keepAudiomLineForT38=F F
+axInviteWithValidIP=F FCOffer=0 transID=0 mANATAddrPref=0V4 negIpAddrType=0V4 MTPAllocated=0 mAllowMultiCodecsInAnswer=F
+```
+
+Finally we send and ACK to the Call Leg B, to send the port and the codec negotiated
+
+```c hl:23,24,25
+10287498.001 |09:18:24.462 |AppInfo  |SIPTcp - wait_SdlSPISignal: Outgoing SIP TCP message to 198.18.1.36 on port 61385 index 58492 
+[3841494,NET]
+ACK sip:d420d1d2-ad14-cf24-fad4-1f13f85bf4db@198.18.1.36:61385;transport=tcp SIP/2.0
+Via: SIP/2.0/TCP 198.18.133.3:5060;branch=z9hG4bKa1c5a11e74631
+From: <sip:1134@198.18.133.3>;tag=1228733~0a37f347-c14b-44f5-8299-186aa2addafc-30514127
+To: <sip:6016@cucm1.dcloud.cisco.com>;tag=005056a9a57c3c02000013a4-0000512e
+Date: Wed, 01 Feb 2023 15:18:21 GMT
+Call-ID: a85d6200-10001-a1c4c-93f492a@198.18.133.3
+User-Agent: Cisco-CUCM12.5
+Max-Forwards: 70
+CSeq: 101 ACK
+Allow-Events: presence
+Session-ID: 393bcdb429c149398852e75aa1228730;remote=00007a4000105000a000005056a9a57c
+Content-Type: application/sdp
+Content-Length: 694
+
+v=0
+o=CiscoSystemsCCM-SIP 1228733 1 IN IP4 198.18.133.3
+s=SIP Call
+c=IN IP4 10.16.169.162
+b=AS:24
+t=0 0
+m=audio 18402 RTP/AVP 18 101
+a=rtpmap:18 G729/8000
+a=fmtp:18 annexb=no
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+m=video 0 RTP/AVP 31 34 96 97
+a=rtpmap:31 H261/90000
+a=rtpmap:34 H263/90000
+a=rtpmap:96 H263-1998/90000
+a=rtpmap:97 H264/90000
+a=content:main
+a=inactive
+m=video 0 RTP/AVP 31 34 96 97
+a=rtpmap:31 H261/90000
+a=rtpmap:34 H263/90000
+a=rtpmap:96 H263-1998/90000
+a=rtpmap:97 H264/90000
+a=content:slides
+a=inactive
+m=application 0 UDP/BFCP *
+c=IN IP4 0.0.0.0
+m=application 0 RTP/AVP 96
+a=rtpmap:96 H224/0
+a=inactive
+m=application 0 UDP/UDT/IX *
+
+```
+
+```c hl:31,32,33,34
+10287523.001 |09:18:24.466 |AppInfo  |SIPTcp - wait_SdlSPISignal: Outgoing SIP TCP message to 10.16.169.162 on port 57855 index 65669 
+[3841495,NET]
+SIP/2.0 200 OK
+Via: SIP/2.0/TCP 10.16.169.162:57855;branch=z9hG4bK00003427
+From: "1134" <sip:1134@198.18.133.3>;tag=bc542fe2ecfc06aa00005d75-00000afe
+To: <sip:6@198.18.133.3;user=phone>;tag=1228730~0a37f347-c14b-44f5-8299-186aa2addafc-30514126
+Date: Wed, 01 Feb 2023 15:18:21 GMT
+Call-ID: bc542fe2-ecfc020b-00001560-0000274a@10.16.169.162
+CSeq: 101 INVITE
+Allow: INVITE, OPTIONS, INFO, BYE, CANCEL, ACK, PRACK, UPDATE, REFER, SUBSCRIBE, NOTIFY
+Allow-Events: presence
+Supported: replaces
+Server: Cisco-CUCM12.5
+Call-Info: <urn:x-cisco-remotecc:callinfo>; security= NotAuthenticated; orientation= to; gci= 1-17041; isVoip; call-instance= 1
+Send-Info: conference, x-cisco-conference
+Session-ID: 00007a4000105000a000005056a9a57c;remote=393bcdb429c149398852e75aa1228730
+Remote-Party-ID: "Adam McKenzie - X6016" <sip:6016@198.18.133.3>;party=called;screen=yes;privacy=off
+Contact: <sip:6@198.18.133.3:5060;transport=tcp>;+u.sip!devicename.ccm.cisco.com="UCSFAMCKENZIE";video;bfcp
+Content-Type: application/sdp
+Content-Length: 348
+
+v=0
+o=CiscoSystemsCCM-SIP 1228730 1 IN IP4 198.18.133.3
+s=SIP Call
+c=IN IP4 198.18.1.36
+b=TIAS:8000
+b=AS:24
+t=0 0
+a=cisco-mari:v1
+a=cisco-mari-rate
+m=audio 24632 RTP/AVP 18 101
+a=extmap:14/sendrecv http://protocols.cisco.com/timestamp#100us
+a=rtpmap:18 G729/8000
+a=fmtp:18 annexb=no
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15`~
 ```
 

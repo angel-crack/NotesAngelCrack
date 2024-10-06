@@ -1,3 +1,5 @@
+Author: Angel Ubarnes (aubarnes)
+
 [+] GeoLocation is a description of the physical geographical area where something currently exists.
 
 In this case will be the segmentation for each city.
@@ -270,6 +272,7 @@ We can add here, it is important to check Send geolocation information.
 
 ![[Pasted image 20240911171704.png]]
 
+
 [+] Geolocation CUCM 103
 
 ``` sql
@@ -415,7 +418,6 @@ a=sendrecv
 LPSession -wait_PolicyRegisterReq, ci[26044484]
 ```
 
-
 NOTE: CUCM will look first for the Called Party, in this case will be for the trunk with CI 26044484.
 
 GeolocInfoA will be Phone(Calling) and GeolocInfoB will be the trunk(Called), devType = 4 ⇒ Interior, devType= 8 ⇒ Border
@@ -520,7 +522,7 @@ But there's no exist any relationship policy between Border:country=VE: so it wi
 
 [+] And Invite is send with Geolocation Info:
 
-``` c hl:location
+``` c hl:":location"
 00005057.001 |16:25:42.257 |AppInfo  |SIPTcp - wait_SdlSPISignal: Outgoing SIP TCP message to 10.207.166.104 on port 5060 index 8
 [122,NET]
 INVITE sip:3000@10.207.166.104:5060 SIP/2.0
@@ -643,17 +645,33 @@ gl_policy_a   device_type_a gl_policy_b  device_type_b action
 DefaultPolicy Border        MaicaoPolicy Interior      Deny
 ```
 
-[+] From now, let's gonna set up everything as previously and delete that policy on CUCM 103 and remember that we are sending Geolocation information on the SIP Invite to CUCM 104 (Venezuela)
+[+] From Cisco Official Documentation
 
-[+] On CUCM  104 we create the following Policies:
+https://www.cisco.com/c/en/us/support/docs/unified-communications/unified-communications-manager-callmanager/211280-Configuration-and-Troubleshoot-of-Logica.html
 
-![[Pasted image 20240912175118.png]] ![[Pasted image 20240912175132.png]]
+## **Points to ponder  
 
-[+] To create the policy relationship let's think on who receive the call, in this case will be Maracaibo (remember we are on CUCM 104 Venezuela). So it should be an Maracaibo Interior, and the other side will be a call coming from Maicao, though a Border
+- Media Devices i.e (Media Termination Point) MTP, (Conference Bridge) CFB, Annunciator, (Music on Hold) MoH are not required to be associated with geolocation values.
+- **There is no LP Policy check for VoIP to VoIP device call or feature with only VoIP participants. In other words, Interior to Interior policy is always allowed.**
+- LPPolicyManager is a singleton process which interfaces with InMemDB and maintains policies in call processing as LP Policy Tree. During CUCM service startup, the LPPolicyManager reads the policies from InMemDB tables and constructs the LP Policy Tree. The Add/Delete/Update of a Policy in DB results in Change Notification to LPPolicyManager and change is affected in LP Policy Tree.
 
-![[Pasted image 20240912175358.png]]
+[+] Referencing to our table, it is important to mention that all calls between interior (Phones) devices even that they are on different sites, will be always allow as Logical Policies won't be checked, even if we have policies from Interior to Interior. So Policies will be either Interior to Border or Border to Interior.
 
-Then, we save:
+``` 
+╔════════════════╤══════════════╤════════╤═════════╤═══════════╗
+║ Calling/Called │ Barranquilla │ Maicao │ Caracas │ Maracaibo ║
+╠════════════════╪══════════════╪════════╪═════════╪═══════════╣
+║ Barranquilla   │              │        │ Allow   │ Allow     ║
+╟────────────────┼──────────────┼────────┼─────────┼───────────╢
+║ Maicao         │              │        │ Allow   │ Deny      ║
+╟────────────────┼──────────────┼────────┼─────────┼───────────╢
+║ Caracas        │ Allow        │ Deny   │         │           ║
+╟────────────────┼──────────────┼────────┼─────────┼───────────╢
+║ Maracaibo      │ Deny         │ Deny   │         │           ║
+╚════════════════╧══════════════╧════════╧═════════╧═══════════╝
+```
 
-![[Pasted image 20240912175420.png]]
+[+] Now, it will be a task for the reader to construct the policies and make work the policies from the above table. For questions and suggestions you send an email to: aubarnes@cisco.com
 
+Author: Angel Ubarnes (aubarnes)
+18/Sept/2024

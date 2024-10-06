@@ -11,11 +11,9 @@
             "id": "36b2748d1d6dd45d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "CUCM/Geolocation/Geolocation.md",
-                "mode": "source",
-                "source": false
+                "file": "CUCM/Traces/images/Pasted image 20240921142235.png"
               }
             }
           }
@@ -69,8 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 414.5,
-    "collapsed": true
+    "width": 414.5
   },
   "right": {
     "id": "30242a3a785e4fd5",
@@ -86,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CUCM/Geolocation/Geolocation.md",
+                "file": "CUCM/Traces/images/Pasted image 20240921142235.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CUCM/Geolocation/Geolocation.md",
+                "file": "CUCM/Traces/images/Pasted image 20240921142235.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CUCM/Geolocation/Geolocation.md"
+                "file": "CUCM/Traces/images/Pasted image 20240921142235.png"
               }
             }
           },
@@ -157,27 +154,41 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "36b2748d1d6dd45d",
+  "active": "89df22a9bf0bc847",
   "lastOpenFiles": [
-    "Pasted image 20240912175420.png",
-    "Pasted image 20240912175358.png",
-    "Pasted image 20240912175132.png",
-    "Pasted image 20240912175118.png",
-    "Pasted image 20240912172655.png",
-    "Pasted image 20240912172600.png",
-    "Pasted image 20240912172337.png",
-    "Pasted image 20240912172312.png",
-    "Pasted image 20240912172309.png",
-    "Pasted image 20240912164245.png",
-    "Pasted image 20240912164144.png",
+    "CUCM/Traces/How To Read CUCM Traces, Essentials.md",
+    "CUCM/Traces/images/Pasted image 20240919173557.png",
+    "CUCM/Cases Of Study/One Way Audio.md",
+    "CUCM/Call Routing/Call Routing.md",
+    "CUCM/Call Routing/Block Calls.md",
     "CUCM/CUCM.md",
-    "CUCM/Geolocation/Images",
+    "CUCM/Cases Of Study",
+    "CUCM/Regions/Regions.md",
+    "CUCM/LAB/Lab.md",
+    "CUCM/Traces/images/Pasted image 20240921152201.png",
+    "CUCM/Traces/images/Pasted image 20240921152134.png",
+    "CUCM/Traces/images/Pasted image 20240921152052.png",
+    "CUCM/Traces/images/Pasted image 20240921152024.png",
+    "CUCM/Traces/images/Pasted image 20240921151955.png",
+    "CUCM/Traces/images/Pasted image 20240921151934.png",
+    "CUCM/Traces/images/Pasted image 20240921151847.png",
+    "CUCM/Traces/images/Pasted image 20240921145249.png",
+    "CUCM/Traces/images/Pasted image 20240921145222.png",
+    "CUCM/Media Resources/ANN.md",
+    "CUCM/Media Resources/CFB.md",
+    "CUCM/Media Resources/Media Resources.md",
+    "CUCM/Media Resources/MOH.md",
     "CUCM/Geolocation/Geolocation.md",
+    "CUCM/Traces/images",
+    "CUCM/Traces",
+    "CUCM/DB Replication/Ports.md",
+    "CUCM/DB Replication/Services.md",
+    "CUCM/DB Replication",
+    "CUCM/Geolocation/Images",
     "CUCM/Geolocation",
     "Untitled.md",
     "Programming/Docker/05. Network.md",
     "Programming/Docker/06. docker-compose.md",
-    "CUCM/Media Resources/MOH.md",
     "CUCM/Exams/Exams.md",
     "CUCM/Media Resources/MTP/DTMF/DTMF.md",
     "CUCM/Media Resources/MTP/DTMF/out-band.md",
@@ -186,25 +197,10 @@
     "Programming/WebProjects/CallManager Monitor/Estructura.md",
     "CUCM/Media Resources/MTP/MTP.md",
     "Programming/GIT/03. Add to Stage.md",
-    "Programming/GIT/02. Inicializar el Repositorio.md",
-    "Programming/GIT/01. Configuracion Global.md",
-    "Programming/GIT/00. Essentials.md",
-    "Programming/GIT/11. Stash - Rebase.md",
-    "Programming/JavaScript/01. Error Handling.md",
-    "Programming/JavaScript/05. For In, For Of.md",
-    "Programming/JavaScript/02. For Loop.md",
-    "Programming/JavaScript/04. Labeled loop.md",
-    "Programming/JavaScript/03. Do... While && While.md",
-    "Programming/JavaScript/00. Add JSON file to variable.md",
-    "Programming/MongoDB/05. Basic Commands.md",
     "Programming/Search Methods",
     "MiniPoolTable",
     "Programming/SCSS/images",
     "Programming/SCSS",
-    "Programming/Angular/Common Steps",
-    "Programming/WebProjects/CallManager Monitor",
-    "CUCM/API",
-    "Programming/Performance",
     "Untitled.canvas"
   ]
 }

@@ -243,7 +243,7 @@
         "enableHighlight": true
       },
       "inlineCode": {
-        "enableInlineCodeStyling": false
+        "enableInlineCodeStyling": true
       },
       "printing": {
         "enablePrintToPDFStyling": false,
@@ -261,7 +261,8 @@
           "backgroundColor": "--code-background",
           "highlightColor": "#D84E6A",
           "alternateHighlightColors": {
-            "info": "#102D03"
+            "info": "#102D03",
+            "warn": "#6F693D"
           },
           "languageBorderColors": {}
         },
@@ -290,7 +291,8 @@
           "backgroundColor": "--code-background",
           "highlightColor": "--text-highlight-bg",
           "alternateHighlightColors": {
-            "info": "#102D03"
+            "info": "#2875AA59",
+            "warn": "#C52C2C61"
           },
           "languageBorderColors": {}
         },
@@ -320,7 +322,7 @@
   "alternateHighlightColorName": "",
   "languageBorderColorName": "",
   "foldAllCommand": false,
-  "settingsType": "inlineCode",
+  "settingsType": "alternateHighlight",
   "langSpecificSettingsType": "",
   "languageSpecificLanguageName": ""
 }
