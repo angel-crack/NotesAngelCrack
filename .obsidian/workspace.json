@@ -4,17 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "066e9e64af91edd9",
+        "id": "5c6d7403a0b535a7",
         "type": "tabs",
         "children": [
           {
-            "id": "36b2748d1d6dd45d",
+            "id": "249be16a3a0269a6",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "CUCM/Traces/images/Pasted image 20240921142235.png"
-              }
+                "file": "Networking/Images/Pasted image 20241023230839.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20241023230839"
             }
           }
         ]
@@ -37,7 +39,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -52,7 +56,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -60,7 +66,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -83,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CUCM/Traces/images/Pasted image 20240921142235.png",
+                "file": "VMWare/Services DNS-NTP-AD-SMTP-SFTP/03. NTP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,7 +99,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 03. NTP"
             }
           },
           {
@@ -100,10 +110,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CUCM/Traces/images/Pasted image 20240921142235.png",
+                "file": "VMWare/Services DNS-NTP-AD-SMTP-SFTP/03. NTP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 03. NTP"
             }
           },
           {
@@ -114,7 +126,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -123,8 +137,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CUCM/Traces/images/Pasted image 20240921142235.png"
-              }
+                "file": "VMWare/Services DNS-NTP-AD-SMTP-SFTP/03. NTP.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 03. NTP"
             }
           },
           {
@@ -132,7 +148,9 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -156,51 +174,51 @@
   },
   "active": "89df22a9bf0bc847",
   "lastOpenFiles": [
-    "CUCM/Traces/How To Read CUCM Traces, Essentials.md",
-    "CUCM/Traces/images/Pasted image 20240919173557.png",
-    "CUCM/Cases Of Study/One Way Audio.md",
-    "CUCM/Call Routing/Call Routing.md",
-    "CUCM/Call Routing/Block Calls.md",
-    "CUCM/CUCM.md",
-    "CUCM/Cases Of Study",
-    "CUCM/Regions/Regions.md",
+    "Networking/Images/Pasted image 20241023105258.png",
+    "CUCM/LAB/CORE Router.md",
+    "CUCM/LAB/Phone.md",
     "CUCM/LAB/Lab.md",
-    "CUCM/Traces/images/Pasted image 20240921152201.png",
-    "CUCM/Traces/images/Pasted image 20240921152134.png",
-    "CUCM/Traces/images/Pasted image 20240921152052.png",
-    "CUCM/Traces/images/Pasted image 20240921152024.png",
-    "CUCM/Traces/images/Pasted image 20240921151955.png",
-    "CUCM/Traces/images/Pasted image 20240921151934.png",
-    "CUCM/Traces/images/Pasted image 20240921151847.png",
-    "CUCM/Traces/images/Pasted image 20240921145249.png",
-    "CUCM/Traces/images/Pasted image 20240921145222.png",
-    "CUCM/Media Resources/ANN.md",
-    "CUCM/Media Resources/CFB.md",
-    "CUCM/Media Resources/Media Resources.md",
-    "CUCM/Media Resources/MOH.md",
-    "CUCM/Geolocation/Geolocation.md",
-    "CUCM/Traces/images",
-    "CUCM/Traces",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/03. NTP.md",
+    "CUCM/CUCM.md",
     "CUCM/DB Replication/Ports.md",
     "CUCM/DB Replication/Services.md",
-    "CUCM/DB Replication",
-    "CUCM/Geolocation/Images",
-    "CUCM/Geolocation",
-    "Untitled.md",
-    "Programming/Docker/05. Network.md",
+    "CUCM/Database/Troubleshooting.md",
+    "CUCM/Database/Database.md",
+    "Networking/03. Router Fundamentals.md",
+    "Networking/Images/Pasted image 20241023231807.png",
+    "Networking/Images/Pasted image 20241023230839.png",
+    "Networking/02. Switch Fundamentals.md",
+    "Networking/01. Layer 2 Fundamentals.md",
+    "Networking/Images/Pasted image 20241023103451.png",
+    "Networking/Images/Pasted image 20241023103439.png",
+    "Networking/Images/Pasted image 20241023102312.png",
+    "Networking/Images/Pasted image 20241023102015.png",
+    "Networking/Images/Pasted image 20241023101701.png",
+    "Networking/Images/Pasted image 20241023101411.png",
+    "Networking/Images/Pasted image 20241023100807.png",
+    "Networking/00. TCP IP Actual.md",
+    "Networking/Images",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/07. SFTP.md",
+    "Networking",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/05. DNS.md",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/06. CA Server.md",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/04. LDAP.md",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/02. Get Images for offline installation.md",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/01. Docker Instalation.md",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/00. OS Installation.md",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA/Images",
+    "Unity/01. Services & Traces.md",
+    "VMWare/Services DNS-NTP-AD-SMTP-SFTP-CA",
+    "VMWare",
+    "Unity/00. Integration.md",
     "Programming/Docker/06. docker-compose.md",
-    "CUCM/Exams/Exams.md",
-    "CUCM/Media Resources/MTP/DTMF/DTMF.md",
-    "CUCM/Media Resources/MTP/DTMF/out-band.md",
-    "CUCM/Media Resources/MTP/DTMF/in-band.md",
-    "Programming/Angular/29. ViewChild().md",
-    "Programming/WebProjects/CallManager Monitor/Estructura.md",
-    "CUCM/Media Resources/MTP/MTP.md",
-    "Programming/GIT/03. Add to Stage.md",
-    "Programming/Search Methods",
-    "MiniPoolTable",
-    "Programming/SCSS/images",
-    "Programming/SCSS",
+    "Unity/Images",
+    "Unity",
+    "Programming/Docker/02. Get image.md",
+    "Programming/Docker/01. Basic Commands.md",
+    "CUCM/Regex",
+    "CUCM/Cases Of Study",
+    "CUCM/Traces/images",
     "Untitled.canvas"
   ]
 }

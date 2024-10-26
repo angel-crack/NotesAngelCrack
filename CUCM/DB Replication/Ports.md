@@ -9,8 +9,8 @@
 
 This means checking the **/etc/hosts** file, **.rhosts** and **sqlhosts** files, through CUCM reporting.
 
-|                           |                                                                                                                                                                                                                  |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| /etc/hosts                | This file is used to locally resolve hostnames to IP addresses.  It should include the hostname and IP address of all nodes in the cluster including CUPS nodes.                                                 |
-| /home/informix/.rhosts    | A list of hostnames which are trusted to make database connections                                                                                                                                               |
-| $INFORMIXDIR/etc/sqlhosts | Full list of CCM servers for replication.  Servers here should have the correct hostname and node id (populated from the process node table).  This is used to determine to which servers replicates are pushed. |
+|                            |                                                                                                                                                                                                                  |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| /etc/hosts \| grep hos     | This file is used to locally resolve hostnames to IP addresses.  It should include the hostname and IP address of all nodes in the cluster including CUPS nodes.                                                 |
+| cat /home/informix/.rhosts | A list of hostnames which are trusted to make database connections                                                                                                                                               |
+| $INFORMIXDIR/etc/sqlhosts  | Full list of CCM servers for replication.  Servers here should have the correct hostname and node id (populated from the process node table).  This is used to determine to which servers replicates are pushed. |
