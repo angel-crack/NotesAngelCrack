@@ -202,7 +202,7 @@ The Trunk is set as:
 
 Enabling this option on the SIP trunk assigns an MTP for every outbound call. This option does not support codec pass-through mode, which imposes a single codec (G.711 or G.729) limitation over the SIP trunk, thus limiting media to voice calls only. With this option enabled, calls over the trunk uses MTPs assigned to the trunk rather than using calling device MTPs, which forces the media to follow the same signaling path.
 
-**Note**![](https://www.cisco.com/c/dam/en/us/td/i/templates/blank.gif) Enabling the **Media Termination Point Required** option on the SIP trunk increases MTP usage because an MTP is assigned for every inbound and outbound call rather than on an as-needed basis.
+**Note**![](blank.gif) Enabling the **Media Termination Point Required** option on the SIP trunk increases MTP usage because an MTP is assigned for every inbound and outbound call rather than on an as-needed basis.
 
 **⇒ [Documentation](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/srnd/collab11/collab11/media.html#pgfId-1158832)**
 
@@ -221,7 +221,7 @@ An annunciator is a software function of the Cisco IP Voice Media Streaming Appl
 
 SIP endpoints have the ability to generate and send tones in-band in the RTP stream. Because SCCP devices do not have this ability, an annunciator is used in conjunction with an MTP to generate or accept DTMF tones when integrating with a SIP endpoint. The following types of tones are supported:
 
-–![](https://www.cisco.com/c/dam/en/us/td/i/templates/blank.gif) Call progress tones (busy, **alerting**, reorder, and ringback)
+–![](blank.gif) Call progress tones (busy, **alerting**, reorder, and ringback)
 
 [Documentation](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/srnd/collab11/collab11/media.html#pgfId-1046552)
 

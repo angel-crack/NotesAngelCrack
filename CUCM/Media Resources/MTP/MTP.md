@@ -4,10 +4,10 @@ A media termination point (MTP) is an entity that accepts two full-duplex media 
 - DTMF Conversion
 - Protocol-specific usage (bridging between IPv4 and IPv6 endpoints)
 
-–![](https://www.cisco.com/c/dam/en/us/td/i/templates/blank.gif) Calls over SIP Trunks
+–![](blank.gif) Calls over SIP Trunks
 
-–![](https://www.cisco.com/c/dam/en/us/td/i/templates/blank.gif) H.323 Supplementary Services
-–![](https://www.cisco.com/c/dam/en/us/td/i/templates/blank.gif) H.323 Outbound Fast Connect
+–![](blank.gif) H.323 Supplementary Services
+–![](blank.gif) H.323 Outbound Fast Connect
 
 Reasons To Allocate an MTP:
 [[Estructura]]
