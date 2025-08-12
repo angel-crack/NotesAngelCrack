@@ -11,7 +11,7 @@ lines.forEach(l => {
 //
 newContent = newContent.replace(/\n$/, "");
 //assign the code block language - change {css} to {html}, {php}, etc.
-header = "```powershell"+ "\n"
+header = "```bash"+ "\n"
 //place cursor after last selected character and add final backticks 
 return header + newContent + "\n" + "```";
 %>
